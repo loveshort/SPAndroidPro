@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="CategoryRadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">12dp</item>
+        <item name="android:paddingTop">6dp</item>
+        <item name="android:paddingBottom">6dp</item>
+        <item name="android:background">@drawable/category_radio_background</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>
