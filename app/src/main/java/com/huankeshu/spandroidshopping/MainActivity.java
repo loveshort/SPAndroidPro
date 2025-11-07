@@ -1,6 +1,7 @@
 package com.huankeshu.spandroidshopping;
 
 import android.os.Bundle;
+import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +10,9 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ListView lvMemos;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,4 +25,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
+
+    private void initViews() {
+      //  lvMemos = findViewById(R.id.toolbar)
+    }
+
 }
