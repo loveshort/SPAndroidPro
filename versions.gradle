@@ -105,13 +105,6 @@ dagger.android_support = "com.google.dagger:dagger-android-support:${versions.da
 dagger.android_processor = "com.google.dagger:dagger-android-processor:${versions.dagger}"
 deps.dagger = dagger
 
-//retrofit
-def retrofit = [:]
-retrofit.retrofit = "com.squareup.retrofit2:retrofit:${versions.retrofit}"
-retrofit.gson = "com.squareup.retrofit2:converter-gson:${versions.gson}"
-retrofit.converter_gson = "com.squareup.retrofit2:converter-gson:${versions.gson}"
-deps.retrofit = retrofit
-
 //glide
 def glide = [:]
 glide.glide = "com.github.bumptech.glide:glide:${versions.glide}"
@@ -138,17 +131,6 @@ deps.banner = "com.youth.banner:banner:$versions.banner"
 deps.agentweb = "com.just.agentweb:agentweb:$versions.agentweb"
 ext.deps = deps
 
-//router
-def arouter = [:]
-arouter.arouter = "com.alibaba:arouter-api:$versions.arouterApi"
-arouter.comiler = "com.alibaba:arouter-compiler:$versions.arouterCompiler"
-deps.arouter = arouter
-
-//leakcanary
-def leakcanary = [:]
-leakcanary.debug = "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
-leakcanary.release = "com.squareup.leakcanary:leakcanary-android-no-op:$versions.leakcanary"
-deps.leakcanary = leakcanary
 
 //cookie
 deps.cookie_jar = "com.github.franmontiel:PersistentCookieJar:$versions.persistentCookieJar"
@@ -157,20 +139,4 @@ deps.flowlayout = "com.hyman:flowlayout-lib:$versions.flowlayout"
 //status bar
 deps.status_bar = "com.flyco.systembar:FlycoSystemBar_Lib:$versions.flycoSystemBar"
 
-//多dex
-deps.multidex = "com.android.support:multidex:$versions.multidex"
-// 远程依赖集成方式（推荐）
-deps.bugly = "com.tencent.bugly:crashreport_upgrade:$versions.bugly"
-// 指定tinker依赖版本（注：应用升级1.3.5版本起，不再内置tinker）
-deps.tinker = "com.tencent.tinker:tinker-android-lib:$versions.tinker"
 
-ext.deps = deps
-
-def addRepos(RepositoryHandler handler) {
-    handler.google()
-    handler.jcenter()
-    handler.maven { url "https://dl.bintray.com/jenly/maven" }
-    handler.maven { url "https://jitpack.io" }
-    handler.maven { url "https://dl.google.com/dl/android/maven2" }
-}
-ext.addRepos = this.&addRepos
