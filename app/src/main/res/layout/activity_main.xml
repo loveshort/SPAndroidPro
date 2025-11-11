@@ -109,4 +109,86 @@
 
     </HorizontalScrollView>
 
+    <!--  备忘录列表  -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_bar"
+        android:layout_below="@id/category_scroll">
+        <ListView
+            android:id="@+id/lv_memos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:divider="@null"
+            android:paddingHorizontal="16dp"/>
+
+        <!--   空状态  -->
+         <LinearLayout
+             android:id="@+id/empty_view"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:orientation="vertical"
+             android:visibility="gone">
+              <ImageView
+                  android:layout_width="120dp"
+                  android:layout_height="120dp"
+                  android:layout_gravity="center"
+                  android:alpha="0.5"
+                  android:src="@drawable/ic_empty_memo"
+                  />
+             <TextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:gravity="center"
+                 android:layout_marginTop="16dp"
+                 android:layout_gravity="center"
+                 android:text="@string/no_memos"
+                 android:textColor="@color/text_secondary"
+                 android:textSize="16sp"/>
+         </LinearLayout>
+    </FrameLayout>
+
+    <!--  底部统计栏  -->
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/surface_color"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp">
+        <TextView
+            android:id="@+id/tv_memo_count"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="共0条备忘录"
+            android:textColor="@color/text_secondary"
+            android:textSize="14sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_weather_small"
+            android:drawablePadding="4dp"
+            android:text="获取天气中..."
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/add_memo"
+        android:src="@drawable/ic_add"
+        android:backgroundTint="?attr/colorPrimary" />
+
 </RelativeLayout>
